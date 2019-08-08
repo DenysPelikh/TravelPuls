@@ -1,0 +1,11 @@
+﻿CREATE TABLE Profiles
+(
+	ProfileId BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+	FirstName Name NOT NULL,
+	LastName Name NULL,
+	Gender NVARCHAR(1) NOT NULL, 
+	EncryptedNationalId VARBINARY(128) NULL,
+	PhoneNumber NVARCHAR(25) NULL,
+	ModifiedDate DATETIMEOFFSET NOT NULL DEFAULT (GETUTCDATE()),
+	CONSTRAINT CK_Profiles_Gender CHECK (UPPER(Gender) IN ('M', 'F')),
+) ON [PRIMARY]
