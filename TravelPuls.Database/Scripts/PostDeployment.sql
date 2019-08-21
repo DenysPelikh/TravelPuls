@@ -25,3 +25,4 @@ IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
     END
 
 /* Scripts */
+:r ".\Seeders\PointsTestSeeder.sql"
